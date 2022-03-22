@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+
+    <div class="list-group">
+        {% for album in albums %}
+            <a href="{% url 'users:album_photos' id=album.id %}"
+               class="list-group-item list-group-item-action">{{ album.title }}</a>
+
+        {% endfor %}
+    </div>
+
+{% endblock content %}
