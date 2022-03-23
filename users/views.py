@@ -175,7 +175,6 @@ class PostUpdateView(View):
 
         updated_data = request.POST["post-update"]
 
-        print(updated_data)
 
         try:
             post = requests.put(url=f"https://jsonplaceholder.typicode.com/posts/{post_id}/", data=updated_data)
