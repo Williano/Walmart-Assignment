@@ -1,4 +1,4 @@
-{% extends 'user-detail-base.html' %}
+{% extends 'base.html' %}
 {% load static %}
 
 {% block stylesheets %}
@@ -85,6 +85,25 @@
 
 {% block content %}
 
+    <div class="row">
+        <div class="d-md-flex justify-content-md-end order-first mb-4">
+            <span>
+                <a href="{% url 'users:user_posts' id=user.id %}" class="btn btn-danger text-white btn-sm me-3"
+                   role="button">
+                <i class="fs-4 bi-house"></i> USER POST
+            </a>
+            </span>
+
+            <span>
+                <a href="{% url 'users:user_albums' id=user.id %}" class="btn btn-danger text-white btn-sm me-4"
+                   role="button">
+                <i class="fs-4 bi-images"></i> USER ALBUMS
+            </a>
+            </span>
+        </div>
+    </div>
+
+    <h1 class="text-center">User Profile</h1>
 
     <div class="container">
         <div class="row gutters">

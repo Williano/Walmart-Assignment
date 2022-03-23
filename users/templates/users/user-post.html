@@ -22,12 +22,12 @@
                     {{ post.title }}
                     <span>
                         <a href="{% url 'users:post_comments' id=post.id %}" type="button"
-                             class="btn btn-link text-primary btn-sm">COMMENTS
+                           class="btn btn-link text-primary btn-sm">COMMENTS
                             </a>
 
                         <a data-bs-toggle="modal"
-                               data-bs-target="#commentModal{{ post.id }}" role="button"
-                             class="btn btn-primary text-white btn-sm">ADD COMMENTS
+                           data-bs-target="#commentModal{{ post.id }}" role="button"
+                           class="btn btn-primary text-white btn-sm">ADD COMMENTS
                             </a>
 
                             <a data-bs-toggle="modal"
@@ -63,21 +63,22 @@
                             <form method="POST"
                                   action="{% url 'users:post_update' id=post.id %}">
                                 {% csrf_token %}
-                                    <div class="mb-3">
-                                <label for="exampleFormControlTextarea1" class="form-label"></label>
-                                <textarea class="form-control" id="exampleFormControlTextarea1" name="post-update" rows="3">{{ post.body }}</textarea>
-                            </div>
-                             <div class="d-flex flex-row-reverse">
-                                  <button type="submit" class="btn btn-primary text-white btn-sm">
-                                    Update Post
-                                </button>
-                                        <button class="btn btn-light-secondary btn-sm" type="button"
-                                        data-bs-dismiss="modal">Cancel
-                                </button>
-                             </div>
+                                <div class="mb-3">
+                                    <label for="exampleFormControlTextarea1" class="form-label"></label>
+                                    <textarea class="form-control" id="exampleFormControlTextarea1" name="post-update"
+                                              rows="3">{{ post.body }}</textarea>
+                                </div>
+                                <div class="d-flex flex-row-reverse">
+                                    <button type="submit" class="btn btn-primary text-white btn-sm">
+                                        Update Post
+                                    </button>
+                                    <button class="btn btn-light-secondary btn-sm" type="button"
+                                            data-bs-dismiss="modal">Cancel
+                                    </button>
+                                </div>
 
                             </form>
-                          </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -100,21 +101,22 @@
                             <form method="POST"
                                   action="{% url 'users:post_user_comment' id=post.id %}">
                                 {% csrf_token %}
-                                    <div class="mb-3">
-                                <label for="exampleFormControlTextarea1" class="form-label"></label>
-                                <textarea class="form-control" id="exampleFormControlTextarea1" name="comment-form" rows="3"></textarea>
-                            </div>
-                             <div class="d-flex flex-row-reverse">
-                                  <button type="submit" class="btn btn-primary text-white btn-sm">
-                                    Post Comment
-                                </button>
-                                        <button class="btn btn-light-secondary btn-sm" type="button"
-                                        data-bs-dismiss="modal">Cancel
-                                </button>
-                             </div>
+                                <div class="mb-3">
+                                    <label for="exampleFormControlTextarea1" class="form-label"></label>
+                                    <textarea class="form-control" id="exampleFormControlTextarea1" name="comment-form"
+                                              rows="3"></textarea>
+                                </div>
+                                <div class="d-flex flex-row-reverse">
+                                    <button type="submit" class="btn btn-primary text-white btn-sm">
+                                        Post Comment
+                                    </button>
+                                    <button class="btn btn-light-secondary btn-sm" type="button"
+                                            data-bs-dismiss="modal">Cancel
+                                    </button>
+                                </div>
 
                             </form>
-                          </div>
+                        </div>
                     </div>
                 </div>
             </div>
