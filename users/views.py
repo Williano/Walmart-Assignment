@@ -1,7 +1,10 @@
+# Standard Library imports
 import json
 
+# Third-party library imports
 import requests
 
+# Core Django imports
 from django.shortcuts import render
 from django.views import View
 from django.contrib import messages
@@ -9,6 +12,10 @@ from django.http import HttpResponseRedirect
 
 
 class UserListView(View):
+    """
+        List Users
+    """
+
     template_name = "users/user-list.html"
     context_object = {}
 
@@ -29,6 +36,10 @@ class UserListView(View):
 
 
 class UserDetailView(View):
+    """
+        Display User Detail
+    """
+
     template_name = "users/user-detail.html"
     context_object = {}
 
@@ -47,6 +58,10 @@ class UserDetailView(View):
 
 
 class UserAlbumView(View):
+    """
+        List User Albums
+    """
+
     template_name = "users/user-album.html"
     context_object = {}
 
@@ -65,6 +80,10 @@ class UserAlbumView(View):
 
 
 class UserAlbumPhotosView(View):
+    """
+        List User's Album Photos
+    """
+
     template_name = "users/user-album-photos.html"
     context_object = {}
 
@@ -83,6 +102,10 @@ class UserAlbumPhotosView(View):
 
 
 class UserPostView(View):
+    """
+        List User's Posts
+    """
+
     template_name = "users/user-post.html"
     context_object = {}
 
@@ -101,6 +124,9 @@ class UserPostView(View):
 
 
 class PostCommentView(View):
+    """
+        List Post Comments
+    """
     template_name = "users/post-comment.html"
     context_object = {}
 
@@ -119,6 +145,9 @@ class PostCommentView(View):
 
 
 class PostDeleteView(View):
+    """
+        Delete Post
+    """
 
     def post(self, request, *arg, **kwargs):
 
@@ -135,6 +164,10 @@ class PostDeleteView(View):
 
 
 class PostUpdateView(View):
+
+    """
+        Update Post
+    """
 
     def post(self, request, *arg, **kwargs):
 
@@ -155,6 +188,9 @@ class PostUpdateView(View):
 
 
 class PostUserCommentView(View):
+    """
+        Post Comment
+    """
 
     def post(self, request, *arg, **kwargs):
 
