@@ -1,4 +1,4 @@
-{% extends 'base.html' %}
+{% extends 'user-detail-base.html' %}
 {% load static %}
 
 {% block stylesheets %}
@@ -6,9 +6,10 @@
     {{ block.super }}
 
     <style>
+
         body {
             margin: 0;
-            padding-top: 40px;
+            padding-top: 50px;
             color: #2e323c;
             background: #f5f6fa;
             position: relative;
@@ -77,11 +78,13 @@
             margin-bottom: 1rem;
         }
 
+
     </style>
 
 {% endblock stylesheets %}
 
 {% block content %}
+
 
     <div class="container">
         <div class="row gutters">

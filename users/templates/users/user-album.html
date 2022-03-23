@@ -4,6 +4,8 @@
 
 {% block content %}
 
+     <h1 class="text-center">Albums</h1>
+
     <div class="list-group">
         {% for album in albums %}
             <a href="{% url 'users:album_photos' id=album.id %}"

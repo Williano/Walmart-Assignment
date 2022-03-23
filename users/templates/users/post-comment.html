@@ -1,0 +1,101 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block stylesheets %}
+
+    {{ block.super }}
+
+    <style>
+        body {
+            background-color: #f7f6f6
+        }
+
+        .card {
+            border: none;
+            box-shadow: 5px 6px 6px 2px #e9ecef;
+            border-radius: 4px
+        }
+
+        .dots {
+            height: 4px;
+            width: 4px;
+            margin-bottom: 2px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block
+        }
+
+        .badge {
+            padding: 7px;
+            padding-right: 9px;
+            padding-left: 16px;
+            box-shadow: 5px 6px 6px 2px #e9ecef
+        }
+
+        .user-img {
+            margin-top: 4px
+        }
+
+        .check-icon {
+            font-size: 17px;
+            color: #c3bfbf;
+            top: 1px;
+            position: relative;
+            margin-left: 3px
+        }
+
+        .form-check-input {
+            margin-top: 6px;
+            margin-left: -24px !important;
+            cursor: pointer
+        }
+
+        .form-check-input:focus {
+            box-shadow: none
+        }
+
+        .icons i {
+            margin-left: 8px
+        }
+
+        .reply {
+            margin-left: 12px
+        }
+
+        .reply small {
+            color: #b7b4b4
+        }
+
+        .reply small:hover {
+            color: green;
+            cursor: pointer
+        }
+    </style>
+
+{% endblock stylesheets %}
+{% block content %}
+
+    <h1 class="text-center">COMMENTS</h1>
+
+    <div class="container mt-5">
+        <div class="row d-flex justify-content-center">
+            <div class="col-md-8">
+                {% for comment in comments %}
+                    <div class="card p-3 mb-3">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="user d-flex flex-row align-items-center"><i class="bi bi-person"
+                                                                                    style='font-size:20px;'></i>
+                                <span><small
+                                        class="font-weight-bold text-primary">{{ comment.name }}</small> <small
+                                        class="font-weight-bold">{{ comment.body }}</small></span></div>
+                            <small>{{ comment.email }}</small>
+                        </div>
+
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+
+{% endblock content %}

@@ -69,38 +69,68 @@
 </header>
 
 
-<!-- Begin page content -->
-<main class="flex-shrink-0 mt-5">
+<div class="row flex-nowrap">
+    <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-dark">
+        <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
+            <a href="/" class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+                <span class="fs-5 d-none d-sm-inline">Menu</span>
+            </a>
+            <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
+                <li class="nav-item">
+                    <a href="{% url 'users:home' %}" class="nav-link align-middle px-0">
+                        <i class="fs-4 bi-house"></i> <span class="ms-1 d-none d-sm-inline">Home</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="{% url 'users:user_detail' id=1 %}" class="nav-link align-middle px-0">
+                        <i class="fs-4 bi-person"></i> <span class="ms-1 d-none d-sm-inline">User Profile</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="{% url 'users:user_posts' id=1 %}" class="nav-link align-middle px-0">
+                        <i class="fs-4 bi-newspaper"></i> <span class="ms-1 d-none d-sm-inline">User Post</span>
+                    </a>
+                </li>
 
-    <!-- Messages -->
-    {% block messages %}
+                <li class="nav-item">
+                    <a href="{% url 'users:user_albums' id=1 %}" class="nav-link align-middle px-0">
+                        <i class="fs-4 bi-images"></i> <span class="ms-1 d-none d-sm-inline">User Albums</span>
+                    </a>
+                </li>
+            </ul>
 
-        <div class="row">
-            <div class="col-md-12">
-                {% if messages %}
-                    {% for message in messages %}
-                        <div class="text-center font-weight-bold alert alert-dismissible fade show
+        </div>
+    </div>
+    <div class="col py-3">
+        <!-- Messages -->
+        {% block messages %}
+
+            <div class="row">
+                <div class="col-md-12">
+                    {% if messages %}
+                        {% for message in messages %}
+                            <div class="text-center font-weight-bold alert alert-dismissible fade show
                                {% if message.level_tag == 'error' %}
                                alert-danger
                                {% else %}
                                alert-{{ message.tags }}
                                {% endif %}">
-                            {{ message }}
-                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
-                            </button>
-                        </div>
-                    {% endfor %}
-                {% endif %}
+                                {{ message }}
+                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+                                </button>
+                            </div>
+                        {% endfor %}
+                    {% endif %}
+                </div>
             </div>
-        </div>
 
-    {% endblock messages %}
+        {% endblock messages %}
 
-    <div class="container">
         {% block content %}
         {% endblock content %}
+
     </div>
-</main>
+</div>
 
 
 <footer class="footer mt-auto py-3 bg-light">
