@@ -2,8 +2,6 @@ from unittest import mock
 from django.test import SimpleTestCase
 from django.urls import reverse
 
-### python manage.py test ###
-
 
 class UserTestCase(SimpleTestCase):
 
