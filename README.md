@@ -12,7 +12,6 @@ Walmart Global Tech Software Engineering Homework Assignment
 ## General info
 A homework assignment for Walmart Global Tech Software Engineer.
 
-
 ## Features
 
 * User List
