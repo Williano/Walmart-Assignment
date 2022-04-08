@@ -27,8 +27,8 @@ A homework assignment for Walmart Global Tech Software Engineer.
 * Python 3.8
 * Javascript
 * Django 4.0.3
-* HTML5
-* CSS3 
+* HTML
+* CSS
 * Bootstrap 5
 * Boostrap 5 icons
 
